@@ -13,13 +13,20 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public void addUser(@RequestBody User user){
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public void addUser(@RequestBody User user) {
         userService.insertUser(user);
     }
-    @RequestMapping(value = "/findById",method = RequestMethod.GET)
-    public String findById(@RequestParam("id") int id){
+
+    @RequestMapping(value = "/findById", method = RequestMethod.GET)
+    public String findById(@RequestParam("id") int id) {
         User userById = userService.findUserById(id);
         return JSON.toJSONString(userById);
+    }
+
+    @RequestMapping(value = "/findById2",method = RequestMethod.GET)
+    public void findById2(){
+        System.out.println("1111111");
+
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
         return userDao.findUserById(id);
     }
 
-    @Transactional
+
     @Override
     public void insertUser(User user) {
         userDao.insertUser(user);
