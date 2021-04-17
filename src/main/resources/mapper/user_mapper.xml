@@ -38,6 +38,11 @@
         select * from tb_user
         where id=#{id}
     </select>
+
+    <resultMap id="userResult" type="com.liang.pojo.User">
+        <result></result>
+
+    </resultMap>
     
     <insert id="insertUser" parameterType="com.liang.pojo.User">
         insert tb_user (

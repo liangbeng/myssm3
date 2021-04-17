@@ -3,6 +3,7 @@ package com.liang.controller;
 import com.alibaba.fastjson.JSON;
 import com.liang.pojo.User;
 import com.liang.service.UserService;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -24,8 +25,8 @@ public class UserController {
         return JSON.toJSONString(userById);
     }
 
-    @RequestMapping(value = "/findById2",method = RequestMethod.GET)
-    public void findById2(){
+    @RequestMapping(value = "/findById2",method = RequestMethod.POST)
+    public void findById2(String name){
         System.out.println("1111111");
 
     }
